@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.portsip.R;
 import com.portsip.sipsample.receiver.PortMessageReceiver;
 import com.portsip.sipsample.service.PortSipService;
+import com.portsip.sipsample.util.KioskUtils;
 
 
 public class MainActivity extends Activity implements RadioGroup.OnCheckedChangeListener {
@@ -54,6 +55,10 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
         switchContent(R.id.login_fragment);
         RadioGroup menuGroup = findViewById(R.id.tab_menu);
         menuGroup.setOnCheckedChangeListener(this);
+
+        KioskUtils kioskUtils = new KioskUtils(this);
+        kioskUtils.start(this);
+
     }
 
     @Override
